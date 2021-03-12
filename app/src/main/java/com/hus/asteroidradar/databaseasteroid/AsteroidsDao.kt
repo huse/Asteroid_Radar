@@ -1,4 +1,4 @@
-package com.hus.asteroidradar.database
+package com.hus.asteroidradar.databaseasteroid
 
 import androidx.room.Dao
 import androidx.room.Query

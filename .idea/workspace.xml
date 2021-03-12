@@ -27,12 +27,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07168ae8-0f0c-42cb-9039-72cd57d08460" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/database/AsteroidsDao.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/Asteroid.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/Asteroid.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/database/AsteroidDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/database/AsteroidDatabase.kt" afterDir="false" />
+    <list default="true" id="07168ae8-0f0c-42cb-9039-72cd57d08460" name="Default Changelist" comment="adding DAo">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/databasepictureday/PictureOfDayDao.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/databasepictureday/PictureOfDayDataBase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/PictureOfDay.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/PictureOfDay.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/database/AsteroidDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/databaseasteroid/AsteroidDatabase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/database/AsteroidsDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/databaseasteroid/AsteroidsDao.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,6 +145,14 @@
       <option name="presentableId" value="Default" />
       <updated>1615563221691</updated>
     </task>
+    <task id="LOCAL-00001" summary="adding DAo">
+      <created>1615588492629</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1615588492630</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -163,6 +171,8 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
+    <MESSAGE value="adding DAo" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding DAo" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2509" y="-616" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1615575494058">
@@ -197,6 +207,10 @@
       <screen x="1792" y="-1057" width="1920" height="1057" />
     </state>
     <state x="2253" y="-890" key="SettingsEditor/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@1792.-1057.1920.1057" timestamp="1615583826934" />
+    <state x="756" y="-787" key="Vcs.Push.Dialog.v2" timestamp="1615588503098">
+      <screen x="-128" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="756" y="-787" key="Vcs.Push.Dialog.v2/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@-128.-1057.1920.1057" timestamp="1615588503098" />
     <state x="2422" y="-784" width="1015" height="548" key="find.popup" timestamp="1615576065769">
       <screen x="1792" y="-1057" width="1920" height="1057" />
     </state>

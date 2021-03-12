@@ -1,4 +1,4 @@
-package com.hus.asteroidradar.database
+package com.hus.asteroidradar.databaseasteroid
 
 import android.content.Context
 import androidx.room.Database
