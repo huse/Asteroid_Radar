@@ -27,7 +27,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07168ae8-0f0c-42cb-9039-72cd57d08460" name="Default Changelist" comment="" />
+    <list default="true" id="07168ae8-0f0c-42cb-9039-72cd57d08460" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/database/AsteroidsDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/Asteroid.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/Asteroid.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/database/AsteroidDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/database/AsteroidDatabase.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,10 +53,12 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1pf9LXxCgl2BUg0xsKBFIrwE0qi" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
@@ -58,7 +66,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -151,11 +159,24 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
+  </component>
   <component name="WindowStateProjectService">
     <state x="2509" y="-616" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1615575494058">
       <screen x="1792" y="-1057" width="1920" height="1057" />
     </state>
     <state x="2509" y="-616" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@1792.-1057.1920.1057" timestamp="1615575494058" />
+    <state x="2600" y="-625" key="Github.ShareDialog" timestamp="1615583790110">
+      <screen x="1792" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="2600" y="-625" key="Github.ShareDialog/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@1792.-1057.1920.1057" timestamp="1615583790110" />
+    <state x="2408" y="-815" key="Github.UntrackedFilesDialog" timestamp="1615583796707">
+      <screen x="1792" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="2408" y="-815" key="Github.UntrackedFilesDialog/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@1792.-1057.1920.1057" timestamp="1615583796707" />
     <state width="1876" height="290" key="GridCell.Tab.0.bottom" timestamp="1615580285290">
       <screen x="1792" y="-1057" width="1920" height="1057" />
     </state>
@@ -172,10 +193,10 @@
       <screen x="1792" y="-1057" width="1920" height="1057" />
     </state>
     <state width="1876" height="290" key="GridCell.Tab.0.right/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@1792.-1057.1920.1057" timestamp="1615580285290" />
-    <state x="2253" y="-890" key="SettingsEditor" timestamp="1615579811295">
+    <state x="2253" y="-890" key="SettingsEditor" timestamp="1615583826934">
       <screen x="1792" y="-1057" width="1920" height="1057" />
     </state>
-    <state x="2253" y="-890" key="SettingsEditor/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@1792.-1057.1920.1057" timestamp="1615579811295" />
+    <state x="2253" y="-890" key="SettingsEditor/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@1792.-1057.1920.1057" timestamp="1615583826934" />
     <state x="2422" y="-784" width="1015" height="548" key="find.popup" timestamp="1615576065769">
       <screen x="1792" y="-1057" width="1920" height="1057" />
     </state>

@@ -1,8 +1,10 @@
 package com.hus.asteroidradar
 
 import android.os.Parcelable
+import androidx.room.Entity
 import kotlinx.android.parcel.Parcelize
 
+@Entity
 @Parcelize
 data class Asteroid(val id: Long, val codename: String, val closeApproachDate: String,
                     val absoluteMagnitude: Double, val estimatedDiameter: Double,
