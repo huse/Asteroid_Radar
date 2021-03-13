@@ -6,7 +6,7 @@ import com.hus.asteroidradar.Asteroid
 
 @Dao
 interface AsteroidsDao {
-    @Query("SELECT * FROM Asteroid ORDER BY date(closeApproachDate) ASC")
+   @Query("SELECT * FROM Asteroid ORDER BY date(closeApproachDate) ASC")
     fun getAll(): List<Asteroid>
 
 }

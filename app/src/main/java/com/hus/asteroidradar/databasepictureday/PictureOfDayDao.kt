@@ -1,12 +1,26 @@
 package com.hus.asteroidradar.databasepictureday
 
-import androidx.room.Dao
-import androidx.room.Query
+import androidx.room.*
 import com.hus.asteroidradar.PictureOfDay
 
 
 @Dao
 interface PictureOfDayDao {
-    @Query("SELECT * FROM pictureofday")
+
+    @Query("DELETE FROM PictureOfDay")
+    fun deleteAll()
+
+    @Transaction
+    fun updateData(picture: PictureOfDay): Long {
+        deleteAll()
+        return insert(picture)
+    }
+
+   @Query("SELECT * FROM PictureOfDay")
     fun get(): PictureOfDay
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insert(picture: PictureOfDay): Long
+
+
 }

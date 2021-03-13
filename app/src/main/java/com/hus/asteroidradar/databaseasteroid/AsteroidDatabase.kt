@@ -13,7 +13,7 @@ abstract class AsteroidDatabase : RoomDatabase(){
         @Volatile
         private var instanceOfAstDt: AsteroidDatabase? = null
 
-        fun getInstance(context: Context): AsteroidDatabase {
+        fun getInstanceOfAsteroidDatabase(context: Context): AsteroidDatabase {
             if (instanceOfAstDt == null) {
                 instanceOfAstDt = Room
                     .databaseBuilder(
