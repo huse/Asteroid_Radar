@@ -7,7 +7,7 @@
 
         <variable
             name="asteroid"
-            type="com.hus.asteroidradar.Asteroid" />
+            type="com.hus.asteroidradar.databaseasteroid.Asteroid" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -1,7 +1,6 @@
 package com.hus.asteroidradar.databasepictureday
 
 import androidx.room.*
-import com.hus.asteroidradar.PictureOfDay
 
 
 @Dao

@@ -1,6 +1,6 @@
 package com.hus.asteroidradar.api
 
-import com.hus.asteroidradar.Asteroid
+import com.hus.asteroidradar.databaseasteroid.Asteroid
 import com.hus.asteroidradar.Constants
 import org.json.JSONObject
 import java.text.SimpleDateFormat

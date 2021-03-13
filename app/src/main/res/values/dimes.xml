@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="large_padding">30dp</dimen>
+    <dimen name="small_padding">10dp</dimen>
+    <dimen name="mid_padding">20dp</dimen>
+
+
+    <dimen name="bar_high">250dp</dimen>
+    <dimen name="details_bar_high">150dp</dimen>
+
+
+
+
+</resources>

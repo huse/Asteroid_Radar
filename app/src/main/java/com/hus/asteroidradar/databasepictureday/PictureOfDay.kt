@@ -1,4 +1,4 @@
-package com.hus.asteroidradar
+package com.hus.asteroidradar.databasepictureday
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

@@ -1,4 +1,4 @@
-package com.hus.asteroidradar
+package com.hus.asteroidradar.databaseasteroid
 
 import android.os.Parcelable
 import androidx.room.Entity
