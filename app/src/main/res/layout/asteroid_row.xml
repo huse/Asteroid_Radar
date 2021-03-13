@@ -18,32 +18,35 @@
         android:layout_height="match_parent">
         <TextView
             android:id="@+id/asteroids_row_name"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="row item Asteroid"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            tools:text="Asteroid Item Test"
             android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/asteroids_row_date"
+
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:textSize="14sp"
             app:layout_constraintTop_toBottomOf="@id/asteroids_row_name"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="0dp"
-            android:textSize="14sp"
-            android:layout_height="wrap_content"
             tools:text="2000-11-11"/>
 
         <ImageView
             android:id="@+id/asteroids_row_hazard_icon"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:padding="@dimen/small_padding"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Asteroid Item Test"
+            android:padding="@dimen/small_padding"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             android:src="@drawable/ic_status_normal"
             android:contentDescription="@string/not_hazardous_asteroid_image" />
     </androidx.constraintlayout.widget.ConstraintLayout>
