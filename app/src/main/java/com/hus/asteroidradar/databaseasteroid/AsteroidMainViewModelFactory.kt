@@ -1,11 +1,21 @@
 package com.hus.asteroidradar.databaseasteroid
 
-import android.app.Application
+import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.hus.asteroidradar.main.MainViewModel
 
-class AsteroidMainViewModelFactory (
+
+
+class AsteroidMainViewModelFactory(private val applicationContext: Context?): ViewModelProvider.NewInstanceFactory() {
+    override fun <T : ViewModel?> create(modelClass: Class<T>): T = applicationContext?.let {
+        MainViewModel(
+                it
+        )
+    } as T
+}
+
+/*class AsteroidMainViewModelFactory (
 
         private val dataSource: AsteroidsDao,
         private val application: Application) : ViewModelProvider.Factory {
@@ -16,4 +26,4 @@ class AsteroidMainViewModelFactory (
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
-}
+}*/

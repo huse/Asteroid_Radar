@@ -2,12 +2,18 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "ac770a9d31ce08a5f76361cc0ffca77d",
+    "identityHash": "97f76e349b4d21227e68342abf42f29a",
     "entities": [
       {
         "tableName": "PictureOfDay",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `mediaType` TEXT NOT NULL, `title` TEXT NOT NULL, `url` TEXT NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`timeMark` INTEGER NOT NULL, `uid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `mediaType` TEXT NOT NULL, `title` TEXT NOT NULL, `url` TEXT NOT NULL)",
         "fields": [
+          {
+            "fieldPath": "timeMark",
+            "columnName": "timeMark",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
           {
             "fieldPath": "uid",
             "columnName": "uid",
@@ -46,7 +52,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ac770a9d31ce08a5f76361cc0ffca77d')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '97f76e349b4d21227e68342abf42f29a')"
     ]
   }
 }
