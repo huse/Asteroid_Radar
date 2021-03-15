@@ -7,6 +7,9 @@
         <variable
             name="viewModel"
             type="com.hus.asteroidradar.main.MainViewModel" />
+        <variable
+            name="AsteroidMainViewModel"
+            type="com.hus.asteroidradar.databaseasteroid.AsteroidMainViewModel" />
 
     </data>
 

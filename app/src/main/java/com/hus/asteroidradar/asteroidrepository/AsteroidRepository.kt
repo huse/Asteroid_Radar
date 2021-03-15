@@ -26,15 +26,15 @@ class AsteroidRepository(
         private val networkUtils: NetworkUtils) {
     fun gettingAsteroidDataWeb(): LiveData<ResourcesData<List<Asteroid>>> {
         return object : ResourcesNetwork<List<Asteroid>, String>(viewModelScope) {
-            override suspend fun loadFromDisk(): LiveData<List<Asteroid>> {
+            override suspend fun loadingFromDisks(): LiveData<List<Asteroid>> {
                 return MutableLiveData(asteroidsDao.getAllData())
             }
 
-            override fun shouldFetch(diskResponse: List<Asteroid>?): Boolean {
+            override fun shouldFetching(diskResponse: List<Asteroid>?): Boolean {
                 return diskResponse.isNullOrEmpty()
             }
 
-            override suspend fun fetchData(): ResponsesFromWeb<String> {
+            override suspend fun fetchingData(): ResponsesFromWeb<String> {
                 val call = asterServicesWeb.getNEOFeed(apiKey = BuildConfig.NASA_ASTEROID_API_KEY)
                 val response = call.safeExecute()
 
@@ -45,20 +45,20 @@ class AsteroidRepository(
                 return Successful(response.body() as String)
             }
 
-            override fun processResponse(response: String): List<Asteroid> {
+            override fun processingResponse(response: String): List<Asteroid> {
                 val json = JSONObject(response)
 
                 return networkUtils.parseAsteroidsJsonResult(json)
             }
 
-            override suspend fun saveToDisk(data: List<Asteroid>): Boolean {
+            override suspend fun savingToDisks(data: List<Asteroid>): Boolean {
                 val ids = asteroidsDao.updateData(data)
                 return ids.isNotEmpty()
             }
         }.dataLive()
     }
 
-    fun gettingPictureOfTheDay(): LiveData<ResourcesData<PictureOfDay>> {
+/*    fun gettingPictureOfTheDay(): LiveData<ResourcesData<PictureOfDay>> {
         return object : ResourcesNetwork<PictureOfDay, String>(viewModelScope) {
             override suspend fun loadFromDisk(): LiveData<PictureOfDay> {
                 return MutableLiveData(pictureOfDayDao.get())
@@ -99,7 +99,7 @@ class AsteroidRepository(
                 return pictureOfDayDao.updateData(data) > 0
             }
         }.dataLive()
-    }
+    }*/
     fun <T> Call<T>.safeExecute(): Response<T> {
         return try {
             this.execute()

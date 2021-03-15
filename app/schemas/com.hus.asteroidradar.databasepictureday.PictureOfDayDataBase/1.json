@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "97f76e349b4d21227e68342abf42f29a",
+    "identityHash": "5557b5c72dffc33c3a18bd0f3c4ce55a",
     "entities": [
       {
         "tableName": "PictureOfDay",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`timeMark` INTEGER NOT NULL, `uid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `mediaType` TEXT NOT NULL, `title` TEXT NOT NULL, `url` TEXT NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`timeMark` INTEGER NOT NULL, `uid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `mediaType` TEXT, `title` TEXT, `url` TEXT)",
         "fields": [
           {
             "fieldPath": "timeMark",
@@ -24,19 +24,19 @@
             "fieldPath": "mediaType",
             "columnName": "mediaType",
             "affinity": "TEXT",
-            "notNull": true
+            "notNull": false
           },
           {
             "fieldPath": "title",
             "columnName": "title",
             "affinity": "TEXT",
-            "notNull": true
+            "notNull": false
           },
           {
             "fieldPath": "url",
             "columnName": "url",
             "affinity": "TEXT",
-            "notNull": true
+            "notNull": false
           }
         ],
         "primaryKey": {
@@ -52,7 +52,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '97f76e349b4d21227e68342abf42f29a')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '5557b5c72dffc33c3a18bd0f3c4ce55a')"
     ]
   }
 }

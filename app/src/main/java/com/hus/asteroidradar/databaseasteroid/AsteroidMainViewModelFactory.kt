@@ -3,13 +3,11 @@ package com.hus.asteroidradar.databaseasteroid
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.hus.asteroidradar.main.MainViewModel
 
 
-
-class AsteroidMainViewModelFactory(private val applicationContext: Context?): ViewModelProvider.NewInstanceFactory() {
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T = applicationContext?.let {
-        MainViewModel(
+class AsteroidMainViewModelFactory(private val context: Context?): ViewModelProvider.NewInstanceFactory() {
+    override fun <T : ViewModel?> create(modelClass: Class<T>): T = context?.let {
+        AsteroidMainViewModel(
                 it
         )
     } as T

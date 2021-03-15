@@ -3,17 +3,21 @@ package com.hus.asteroidradar.api
 import com.hus.asteroidradar.databaseasteroid.Asteroid
 import com.hus.asteroidradar.Constants
 import org.json.JSONObject
+import timber.log.Timber
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 class NetworkUtils {
     fun parseAsteroidsJsonResult(jsonResult: JSONObject): ArrayList<Asteroid> {
+        Timber.i("parseAsteroidsJsonResult method called." )
         val nearEarthObjectsJson = jsonResult.getJSONObject("near_earth_objects")
 
         val asteroidList = ArrayList<Asteroid>()
 
         val nextSevenDaysFormattedDates = getNextSevenDaysFormattedDates()
+        Timber.i("hhhh" + nextSevenDaysFormattedDates.toString())
         for (formattedDate in nextSevenDaysFormattedDates) {
+            //val dateAsteroidJsonArray = nearEarthObjectsJson.getJSONArray(formattedDate)
             val dateAsteroidJsonArray = nearEarthObjectsJson.getJSONArray(formattedDate)
 
             for (i in 0 until dateAsteroidJsonArray.length()) {
