@@ -9,6 +9,7 @@ import com.hus.asteroidradar.databaseasteroid.AsteroidsDao
 import com.hus.asteroidradar.databasepictureday.PictureOfDay
 import com.hus.asteroidradar.databasepictureday.PictureOfDayDao
 import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import kotlinx.coroutines.CoroutineScope
 import okhttp3.MediaType
 import okhttp3.ResponseBody
@@ -85,6 +86,7 @@ class AsteroidRepository(
 
             override fun processingResponse(response: String): PictureOfDay {
                 val picture = Moshi.Builder()
+                        .addLast(KotlinJsonAdapterFactory())
                         .build()
                         .adapter(PictureOfDay::class.java)
                         .fromJson(response)
