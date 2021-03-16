@@ -1,5 +1,6 @@
 package com.hus.asteroidradar.asteroidrepository
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.hus.asteroidradar.BuildConfig
@@ -85,14 +86,14 @@ class AsteroidRepository(
             }
 
             override fun processingResponse(response: String): PictureOfDay {
+
+                Log.i("kkkkk", "processingResponse called"  + response)
                 val picture = Moshi.Builder()
                         .addLast(KotlinJsonAdapterFactory())
                         .build()
                         .adapter(PictureOfDay::class.java)
                         .fromJson(response)
-                        ?:
-                        // Return an empty picture
-                        PictureOfDay(-1, "image", "", "")
+                        ?: PictureOfDay(-1, "image", "", "")
                 picture.timeMark = System.currentTimeMillis()
                 return picture
             }

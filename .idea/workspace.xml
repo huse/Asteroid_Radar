@@ -6,7 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="hhh" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="kkk" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
@@ -30,17 +30,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07168ae8-0f0c-42cb-9039-72cd57d08460" name="Default Changelist" comment="Failed to find the generated JsonAdapter class for class com.hus.asteroidradar.databasepictureday.PictureOfDay">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_moshi_moshi_1_11_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_moshi_moshi_kotlin_1_11_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okio_okio_1_17_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_moshi_moshi_1_9_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_moshi_moshi_kotlin_1_9_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okio_okio_1_17_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/Asteroid_Radar.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/Asteroid_Radar.app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+    <list default="true" id="07168ae8-0f0c-42cb-9039-72cd57d08460" name="Default Changelist" comment="Failed to find the generated JsonAdapter class for class com.squareup.moshi.JsonDataException: Required value 'uid' missing at $&#10;It fails at AstroidRepository.kt line 62. .fromJson(response)">
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/asteroidrepository/AsteroidRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/asteroidrepository/AsteroidRepository.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -262,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615921297152</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Failed to find the generated JsonAdapter class for class com.squareup.moshi.JsonDataException: Required value 'uid' missing at $&#10;It fails at AstroidRepository.kt line 62. .fromJson(response)">
+      <created>1615922295098</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1615922295098</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -295,7 +292,8 @@
     <MESSAGE value="fixing populating data on recyclerview." />
     <MESSAGE value="fixed populating data on recyclerview." />
     <MESSAGE value="Failed to find the generated JsonAdapter class for class com.hus.asteroidradar.databasepictureday.PictureOfDay" />
-    <option name="LAST_COMMIT_MESSAGE" value="Failed to find the generated JsonAdapter class for class com.hus.asteroidradar.databasepictureday.PictureOfDay" />
+    <MESSAGE value="Failed to find the generated JsonAdapter class for class com.squareup.moshi.JsonDataException: Required value 'uid' missing at $&#10;It fails at AstroidRepository.kt line 62. .fromJson(response)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Failed to find the generated JsonAdapter class for class com.squareup.moshi.JsonDataException: Required value 'uid' missing at $&#10;It fails at AstroidRepository.kt line 62. .fromJson(response)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="572" y="-735" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615852993345">
@@ -336,35 +334,35 @@
       <screen x="1792" y="-1057" width="1920" height="1057" />
     </state>
     <state x="2408" y="-815" key="Github.UntrackedFilesDialog/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@1792.-1057.1920.1057" timestamp="1615583796707" />
-    <state width="1748" height="481" key="GridCell.Tab.0.bottom" timestamp="1615922074150">
-      <screen x="-128" y="-1057" width="1920" height="1057" />
+    <state width="1748" height="63" key="GridCell.Tab.0.bottom" timestamp="1615922633933">
+      <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state width="1748" height="481" key="GridCell.Tab.0.bottom/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@-128.-1057.1920.1057" timestamp="1615922074150" />
-    <state width="1473" height="262" key="GridCell.Tab.0.bottom/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@0.23.1792.1017" timestamp="1615854672458" />
+    <state width="1748" height="63" key="GridCell.Tab.0.bottom/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@0.23.1792.1017" timestamp="1615922633933" />
     <state width="1748" height="262" key="GridCell.Tab.0.bottom/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@1792.-1057.1920.1057" timestamp="1615918076881" />
     <state width="1876" height="290" key="GridCell.Tab.0.bottom/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1097@-128.-1057.1920.1057" timestamp="1615827942522" />
     <state width="1876" height="290" key="GridCell.Tab.0.bottom/1792.-1057.1920.977/-128.-1057.1920.1057/0.23.1792.1097@-128.-1057.1920.1057" timestamp="1615597146190" />
-    <state width="1748" height="481" key="GridCell.Tab.0.center" timestamp="1615922074149">
-      <screen x="-128" y="-1057" width="1920" height="1057" />
+    <state width="1748" height="63" key="GridCell.Tab.0.center" timestamp="1615922633932">
+      <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state width="1748" height="481" key="GridCell.Tab.0.center/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@-128.-1057.1920.1057" timestamp="1615922074149" />
-    <state width="1473" height="262" key="GridCell.Tab.0.center/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@0.23.1792.1017" timestamp="1615854672457" />
+    <state width="1748" height="63" key="GridCell.Tab.0.center/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@0.23.1792.1017" timestamp="1615922633932" />
     <state width="1748" height="262" key="GridCell.Tab.0.center/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@1792.-1057.1920.1057" timestamp="1615918076881" />
     <state width="1876" height="290" key="GridCell.Tab.0.center/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1097@-128.-1057.1920.1057" timestamp="1615827942521" />
     <state width="1876" height="290" key="GridCell.Tab.0.center/1792.-1057.1920.977/-128.-1057.1920.1057/0.23.1792.1097@-128.-1057.1920.1057" timestamp="1615597146189" />
-    <state width="1748" height="481" key="GridCell.Tab.0.left" timestamp="1615922074149">
-      <screen x="-128" y="-1057" width="1920" height="1057" />
+    <state width="1748" height="63" key="GridCell.Tab.0.left" timestamp="1615922633932">
+      <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state width="1748" height="481" key="GridCell.Tab.0.left/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@-128.-1057.1920.1057" timestamp="1615922074149" />
-    <state width="1473" height="262" key="GridCell.Tab.0.left/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@0.23.1792.1017" timestamp="1615854672457" />
+    <state width="1748" height="63" key="GridCell.Tab.0.left/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@0.23.1792.1017" timestamp="1615922633932" />
     <state width="1748" height="262" key="GridCell.Tab.0.left/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@1792.-1057.1920.1057" timestamp="1615918076880" />
     <state width="1876" height="290" key="GridCell.Tab.0.left/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1097@-128.-1057.1920.1057" timestamp="1615827942521" />
     <state width="1876" height="290" key="GridCell.Tab.0.left/1792.-1057.1920.977/-128.-1057.1920.1057/0.23.1792.1097@-128.-1057.1920.1057" timestamp="1615597146188" />
-    <state width="1748" height="481" key="GridCell.Tab.0.right" timestamp="1615922074150">
-      <screen x="-128" y="-1057" width="1920" height="1057" />
+    <state width="1748" height="63" key="GridCell.Tab.0.right" timestamp="1615922633932">
+      <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state width="1748" height="481" key="GridCell.Tab.0.right/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@-128.-1057.1920.1057" timestamp="1615922074150" />
-    <state width="1473" height="262" key="GridCell.Tab.0.right/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@0.23.1792.1017" timestamp="1615854672458" />
+    <state width="1748" height="63" key="GridCell.Tab.0.right/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@0.23.1792.1017" timestamp="1615922633932" />
     <state width="1748" height="262" key="GridCell.Tab.0.right/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@1792.-1057.1920.1057" timestamp="1615918076881" />
     <state width="1876" height="290" key="GridCell.Tab.0.right/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1097@-128.-1057.1920.1057" timestamp="1615827942522" />
     <state width="1876" height="290" key="GridCell.Tab.0.right/1792.-1057.1920.977/-128.-1057.1920.1057/0.23.1792.1097@-128.-1057.1920.1057" timestamp="1615597146189" />
@@ -372,10 +370,10 @@
       <screen x="1792" y="-1057" width="1920" height="1057" />
     </state>
     <state x="2253" y="-890" key="SettingsEditor/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@1792.-1057.1920.1057" timestamp="1615583826934" />
-    <state x="756" y="-787" key="Vcs.Push.Dialog.v2" timestamp="1615921300730">
+    <state x="756" y="-787" key="Vcs.Push.Dialog.v2" timestamp="1615922298833">
       <screen x="-128" y="-1057" width="1920" height="1057" />
     </state>
-    <state x="756" y="-787" key="Vcs.Push.Dialog.v2/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@-128.-1057.1920.1057" timestamp="1615921300730" />
+    <state x="756" y="-787" key="Vcs.Push.Dialog.v2/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@-128.-1057.1920.1057" timestamp="1615922298833" />
     <state x="2676" y="-787" key="Vcs.Push.Dialog.v2/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@1792.-1057.1920.1057" timestamp="1615919063065" />
     <state x="756" y="-787" key="Vcs.Push.Dialog.v2/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1097@-128.-1057.1920.1057" timestamp="1615827926446" />
     <state x="756" y="-787" key="Vcs.Push.Dialog.v2/1792.-1057.1920.977/-128.-1057.1920.1057/0.23.1792.1097@-128.-1057.1920.1057" timestamp="1615763365491" />
