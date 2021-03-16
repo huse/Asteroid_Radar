@@ -2,6 +2,7 @@ package com.hus.asteroidradar.main
 
 import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -16,6 +17,7 @@ import com.hus.asteroidradar.databaseasteroid.AsteroidMainViewModelFactory
 import com.hus.asteroidradar.databinding.FragmentMainBinding
 import com.hus.asteroidradar.detail.DetailFragment
 import com.hus.asteroidradar.recyclerasteroid.AsteroidRecyclerAdapter
+import timber.log.Timber
 
 class MainFragment : Fragment() {
 
@@ -32,6 +34,11 @@ class MainFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
+
+        Timber.plant(Timber.DebugTree())
+        Timber.i("hhhh by Timber onCreateView method called." )
+
+        Log.i("hhhhh", "onCreateView called")
         observeViewModel()
        // observePictureOfDay()
         binding = FragmentMainBinding.inflate(inflater)

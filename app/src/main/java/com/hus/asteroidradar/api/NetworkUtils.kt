@@ -1,5 +1,6 @@
 package com.hus.asteroidradar.api
 
+import android.util.Log
 import com.hus.asteroidradar.databaseasteroid.Asteroid
 import com.hus.asteroidradar.Constants
 import org.json.JSONObject
@@ -9,7 +10,9 @@ import java.util.*
 import kotlin.collections.ArrayList
 class NetworkUtils {
     fun parseAsteroidsJsonResult(jsonResult: JSONObject): ArrayList<Asteroid> {
+        Timber.plant(Timber.DebugTree())
         Timber.i("parseAsteroidsJsonResult method called." )
+        Log.i("hhhhh", "parseAsteroidsJsonResult called")
         val nearEarthObjectsJson = jsonResult.getJSONObject("near_earth_objects")
 
         val asteroidList = ArrayList<Asteroid>()

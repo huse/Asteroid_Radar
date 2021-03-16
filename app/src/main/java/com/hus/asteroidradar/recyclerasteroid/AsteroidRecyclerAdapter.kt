@@ -1,6 +1,7 @@
 package com.hus.asteroidradar.recyclerasteroid
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,6 +40,9 @@ class AsteroidRecyclerAdapter(private val context: Context?,
 
     }
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AsteroidsViewHolder {
+
+
+            Log.i("hhhhh", "onCreateViewHolder called")
             return AsteroidsViewHolder(AsteroidRowBinding.inflate(LayoutInflater.from(parent.context)),LayoutInflater.from(context)
                     .inflate(R.layout.asteroid_row,
                             parent,
@@ -47,6 +51,8 @@ class AsteroidRecyclerAdapter(private val context: Context?,
         }
 
         override fun onBindViewHolder(holder: AsteroidsViewHolder, position: Int) {
+
+            Log.i("hhhhh", "onBindViewHolder called")
             val asteroid = asteroids[position]
             holder.name.text = asteroid.codename
             holder.date.text = asteroid.closeApproachDate
@@ -68,6 +74,8 @@ class AsteroidRecyclerAdapter(private val context: Context?,
         }
 
         override fun getItemCount(): Int {
+            Log.i("hhhhh", "getItemCount called")
+
             return asteroids.size
         }
 
