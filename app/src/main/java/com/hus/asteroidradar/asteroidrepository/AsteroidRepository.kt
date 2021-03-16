@@ -58,13 +58,13 @@ class AsteroidRepository(
         }.dataLive()
     }
 
-/*    fun gettingPictureOfTheDay(): LiveData<ResourcesData<PictureOfDay>> {
+   fun gettingPictureOfTheDay(): LiveData<ResourcesData<PictureOfDay>> {
         return object : ResourcesNetwork<PictureOfDay, String>(viewModelScope) {
-            override suspend fun loadFromDisk(): LiveData<PictureOfDay> {
+            override suspend fun loadingFromDisks(): LiveData<PictureOfDay> {
                 return MutableLiveData(pictureOfDayDao.get())
             }
 
-            override fun shouldFetch(diskResponse: PictureOfDay?): Boolean {
+            override fun shouldFetching(diskResponse: PictureOfDay?): Boolean {
                 // Fetch if 24hr timestamp has expired
                 return diskResponse == null
                         || diskResponse.timeMark +
@@ -72,7 +72,7 @@ class AsteroidRepository(
                                 .convert(24L, TimeUnit.HOURS) < System.currentTimeMillis()
             }
 
-            override suspend fun fetchData(): ResponsesFromWeb<String> {
+            override suspend fun fetchingData(): ResponsesFromWeb<String> {
                 val call = asterServicesWeb.getPictureOfDay(apiKey = BuildConfig.NASA_ASTEROID_API_KEY)
                 val response = call.safeExecute()
 
@@ -83,23 +83,23 @@ class AsteroidRepository(
                 return Successful(response.body() as String)
             }
 
-            override fun processResponse(response: String): PictureOfDay {
-                val pic = Moshi.Builder()
+            override fun processingResponse(response: String): PictureOfDay {
+                val picture = Moshi.Builder()
                         .build()
                         .adapter(PictureOfDay::class.java)
                         .fromJson(response)
                         ?:
                         // Return an empty picture
                         PictureOfDay(-1, "image", "", "")
-                pic.timeMark = System.currentTimeMillis()
-                return pic
+                picture.timeMark = System.currentTimeMillis()
+                return picture
             }
 
-            override suspend fun saveToDisk(data: PictureOfDay): Boolean {
+            override suspend fun savingToDisks(data: PictureOfDay): Boolean {
                 return pictureOfDayDao.updateData(data) > 0
             }
         }.dataLive()
-    }*/
+    }
     fun <T> Call<T>.safeExecute(): Response<T> {
         return try {
             this.execute()

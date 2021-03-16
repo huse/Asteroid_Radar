@@ -53,7 +53,7 @@ class AsteroidMainViewModel(applicationContext: Context) : ViewModel() {
     val asteroidFeed: MediatorLiveData<ResourcesData<List<Asteroid>>> = MediatorLiveData()
     val selectedAsteroid = MutableLiveData<Asteroid>()
 
- //   val pictureOfDay: LiveData<ResourcesData<PictureOfDay>> = repository.gettingPictureOfTheDay()
+    val pictureOfDay: LiveData<ResourcesData<PictureOfDay>> = repository.gettingPictureOfTheDay()
 
     fun selecting(item: Asteroid) {
         Log.i("hhhhh", "from AsteroidMainViewModel selecting called" + item)
