@@ -7,16 +7,16 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import com.hus.asteroidradar.R
 import com.hus.asteroidradar.asteroidrepository.StatusEnumClass
 import com.hus.asteroidradar.databaseasteroid.Asteroid
 import com.hus.asteroidradar.databaseasteroid.AsteroidMainViewModel
 import com.hus.asteroidradar.databaseasteroid.AsteroidMainViewModelFactory
+import com.hus.asteroidradar.databasepictureday.PictureOfDay
 import com.hus.asteroidradar.databinding.FragmentMainBinding
 import com.hus.asteroidradar.detail.DetailFragment
 import com.hus.asteroidradar.recyclerasteroid.AsteroidRecyclerAdapter
+import com.squareup.picasso.Picasso
 import timber.log.Timber
 
 class MainFragment : Fragment() {
@@ -39,8 +39,8 @@ class MainFragment : Fragment() {
         Timber.i("hhhh by Timber onCreateView method called." )
 
         Log.i("hhhhh", "onCreateView called")
-        observeViewModel()
-       // observePictureOfDay()
+        observingAsteroidInViewModel()
+        observingPictureOfDay()
         binding = FragmentMainBinding.inflate(inflater)
         binding.lifecycleOwner = this
 
@@ -59,6 +59,7 @@ class MainFragment : Fragment() {
             if (!isTablet) {
                 activity?.supportFragmentManager
                         ?.beginTransaction()
+                    ?.replace(R.id.nav_host_fragment, DetailFragment())
                         ?.addToBackStack(TAG)
                         ?.commit()
             }
@@ -114,7 +115,7 @@ class MainFragment : Fragment() {
         inflater.inflate(R.menu.main_overflow_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
-    fun observeViewModel() {
+    fun observingAsteroidInViewModel() {
         asteroidViewModel.asteroidFeed.observe(viewLifecycleOwner, Observer { resource ->
             when (resource.status) {
                 StatusEnumClass.SUCCESSFULL -> {
@@ -122,14 +123,42 @@ class MainFragment : Fragment() {
                         return@Observer
                     }
 
-                    bindViewModelData(resource.data)
+                    bindingAsteroidlData(resource.data)
                 }
             }
         })
     }
-    fun bindViewModelData(data: List<Asteroid>) {
+    private fun observingPictureOfDay() {
+
+        asteroidViewModel.pictureOfDay.observe(viewLifecycleOwner, Observer { resource ->
+            when (resource.status) {
+                StatusEnumClass.SUCCESSFULL -> {
+                    if (resource.data == null) {
+                        return@Observer
+                    }
+
+                    bindingPictureOfDay(resource.data)
+                }
+                StatusEnumClass.LOAD -> {}
+                StatusEnumClass.ERROR -> {
+                }
+            }
+        })
+    }
+
+    private fun bindingPictureOfDay(pictureOfDay: PictureOfDay) {
+        binding.activityMainImageOfTheDay.contentDescription = getString(
+            R.string.nasa_picture_of_day_content_description_format,
+            pictureOfDay.title)
+
+        binding.textViewForImage.text = pictureOfDay.title
+        Picasso.get()
+            .load(pictureOfDay.url)
+            .into(binding.activityMainImageOfTheDay)
+    }
+    private fun bindingAsteroidlData(asteroidList: List<Asteroid>) {
         asteroidsFeeder.clear()
-        asteroidsFeeder.addAll(data)
+        asteroidsFeeder.addAll(asteroidList)
         binding.asteroidRecycler.adapter?.notifyDataSetChanged()
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
