@@ -56,19 +56,16 @@ class AsteroidRecyclerAdapter(private val context: Context?,
             val asteroid = asteroids[position]
             holder.name.text = asteroid.codename
             holder.date.text = asteroid.closeApproachDate
-
-            //holder.icon.isSelected = asteroid.isPotentiallyHazardous
+            holder.icon.isSelected = asteroid.isPotentiallyHazardous
             Log.i("kkkkk   ", "isPotentiallyHazardous  :   " + asteroid.isPotentiallyHazardous)
-
-
             if (asteroid.isPotentiallyHazardous) {
                 Log.i("kkkkk   ", "Set icon to hazardous")
 
-                R.drawable.ic_status_potentially_hazardous
-
+                holder.icon.setImageResource(R.drawable.ic_status_potentially_hazardous)
             } else {
                 Log.i("kkkkk   ", "Set icon to Normal")
-                R.drawable.ic_status_normal
+
+                holder.icon.setImageResource(R.drawable.ic_status_normal)
             }
 
 
