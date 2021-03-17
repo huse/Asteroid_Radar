@@ -29,12 +29,19 @@ class DetailFragment : Fragment() {
             bindingAsteroidViewModelData(resource)
 
         })
-        val asteroid = DetailFragmentArgs.fromBundle(requireArguments()).selectedAsteroid
+       // val asteroid = DetailFragmentArgs.fromBundle(requireArguments()).selectedAsteroid
 
-        binding.asteroid = asteroid
+        //binding.asteroid = asteroid
 
         binding.helpButton.setOnClickListener {
-            displayAstronomicalUnitExplanationDialog()
+            //displayAstronomicalUnitExplanationDialog()
+            context?.also {
+                AlertDialog.Builder(it)
+                    .setMessage(R.string.astronomica_unit_explanation)
+                    .setPositiveButton(android.R.string.ok) { dialog, _ -> dialog.dismiss() }
+                    .create()
+                    .show()
+            }
         }
 
         return binding.root

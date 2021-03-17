@@ -7,6 +7,7 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.hus.asteroidradar.R
 import com.hus.asteroidradar.asteroidrepository.StatusEnumClass
 import com.hus.asteroidradar.databaseasteroid.Asteroid
@@ -57,11 +58,12 @@ class MainFragment : Fragment() {
 
             val isTablet = resources.configuration.smallestScreenWidthDp > 600
             if (!isTablet) {
-                activity?.supportFragmentManager
-                        ?.beginTransaction()
-                    ?.replace(R.id.nav_host_fragment, DetailFragment())
-                        ?.addToBackStack(TAG)
-                        ?.commit()
+
+                val action = MainFragmentDirections
+                    .actionShowDetail(asteroidsFeeder[pos])
+                findNavController().navigate(action)
+
+
             }
         }
 

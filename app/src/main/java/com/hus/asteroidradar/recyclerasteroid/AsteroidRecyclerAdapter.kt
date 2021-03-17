@@ -57,13 +57,27 @@ class AsteroidRecyclerAdapter(private val context: Context?,
             holder.name.text = asteroid.codename
             holder.date.text = asteroid.closeApproachDate
 
-            holder.icon.isSelected = asteroid.isPotentiallyHazardous
+            //holder.icon.isSelected = asteroid.isPotentiallyHazardous
+            Log.i("kkkkk   ", "isPotentiallyHazardous  :   " + asteroid.isPotentiallyHazardous)
 
-            holder.icon.contentDescription = if (asteroid.isPotentiallyHazardous) {
+
+            if (asteroid.isPotentiallyHazardous) {
+                Log.i("kkkkk   ", "Set icon to hazardous")
+
+                R.drawable.ic_status_potentially_hazardous
+
+            } else {
+                Log.i("kkkkk   ", "Set icon to Normal")
+                R.drawable.ic_status_normal
+            }
+
+
+/*            holder.icon.contentDescription = if (asteroid.isPotentiallyHazardous) {
                 context?.getString(R.string.potentially_hazardous_asteroid_image)
+
             } else {
                 context?.getString(R.string.not_hazardous_asteroid_image)
-            }
+            }*/
 
            /* when (holder) {
                 is AsteroidsViewHolder -> {

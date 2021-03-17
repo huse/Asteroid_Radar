@@ -16,41 +16,46 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/small_padding"
         android:onClick="@{() -> asteroidrowclickListener.onClick(asteroidrow)}">
 
         <TextView
             android:id="@+id/asteroids_row_name"
-            android:textColor="@color/text_grey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:textColor="@color/text_grey"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/asteroids_row_icon"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="row item Asteroid" />
+            tools:text="Asteroid name or number" />
 
         <TextView
             android:id="@+id/asteroids_row_date"
-            android:textColor="@color/text_grey"
-
             android:layout_width="0dp"
+
             android:layout_height="wrap_content"
+            android:textColor="@color/text_grey"
             android:textSize="14sp"
             app:layout_constraintEnd_toStartOf="@+id/asteroids_row_icon"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/asteroids_row_name"
-            tools:text="2000-11-11" />
+            tools:text="date" />
 
         <ImageView
             android:id="@+id/asteroids_row_icon"
-
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
-            tools:text="Asteroid Item Test"
+            android:contentDescription="@string/not_hazardous_asteroid_image"
             android:padding="@dimen/small_padding"
-            app:layout_constraintTop_toTopOf="parent"
+            android:src="@{asteroidrow.potentiallyHazardous ? @drawable/ic_status_potentially_hazardous : @drawable/ic_status_normal}"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:src="@drawable/ic_status_normal"
-            android:contentDescription="@string/not_hazardous_asteroid_image" />
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/asteroids_row_name"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Asteroid Item Test" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
