@@ -1,6 +1,7 @@
 package com.hus.asteroidradar.databaseasteroid
 
 import androidx.room.*
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface AsteroidsDao {
@@ -20,5 +21,8 @@ interface AsteroidsDao {
 
    @Query("SELECT * FROM Asteroid ORDER BY date(closeApproachDate) ASC")
     fun getAllData(): List<Asteroid>
+
+    @Query("SELECT * FROM Asteroid WHERE date(closeApproachDate) >= :startDate AND date(closeApproachDate) <= :endDate ORDER BY date(closeApproachDate) ASC")
+    fun getAsteroidsByDate(startDate: String, endDate: String): Flow<List<Asteroid>>
 
 }

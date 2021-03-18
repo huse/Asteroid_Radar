@@ -62,4 +62,20 @@ class NetworkUtils {
 
         return formattedDateList
     }
+
+    fun getTodaysData(): String {
+        val calendar = Calendar.getInstance()
+        return formatDateData(calendar.time)
+    }
+
+    fun getWeekData(): String {
+        val calendar = Calendar.getInstance()
+        calendar.add(Calendar.DAY_OF_YEAR, 7)
+        return formatDateData(calendar.time)
+    }
+
+    private fun formatDateData(date: Date): String {
+        val dateFormat = SimpleDateFormat(Constants.API_QUERY_DATE_FORMAT, Locale.getDefault())
+        return dateFormat.format(date)
+    }
 }

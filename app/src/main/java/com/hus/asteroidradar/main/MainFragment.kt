@@ -1,6 +1,5 @@
 package com.hus.asteroidradar.main
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import android.view.*
@@ -9,15 +8,16 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.hus.asteroidradar.R
+import com.hus.asteroidradar.asteroidrepository.AsteroidRepository
 import com.hus.asteroidradar.asteroidrepository.StatusEnumClass
 import com.hus.asteroidradar.databaseasteroid.Asteroid
 import com.hus.asteroidradar.databaseasteroid.AsteroidMainViewModel
 import com.hus.asteroidradar.databaseasteroid.AsteroidMainViewModelFactory
 import com.hus.asteroidradar.databasepictureday.PictureOfDay
 import com.hus.asteroidradar.databinding.FragmentMainBinding
-import com.hus.asteroidradar.detail.DetailFragment
 import com.hus.asteroidradar.recyclerasteroid.AsteroidRecyclerAdapter
 import com.squareup.picasso.Picasso
+import kotlinx.coroutines.InternalCoroutinesApi
 import timber.log.Timber
 
 class MainFragment : Fragment() {
@@ -163,7 +163,40 @@ class MainFragment : Fragment() {
         asteroidsFeeder.addAll(asteroidList)
         binding.asteroidRecycler.adapter?.notifyDataSetChanged()
     }
+
+
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.show_next_week_asteroid -> asteroidViewModel.menuWeekClicked()
+            R.id.show_saved_asteroid -> asteroidViewModel.menuSavedClicked()
+            R.id.show_today_asteroid -> asteroidViewModel.menuTodayClicked()
+        }
+
         return true
+        /*return when(item.itemId){
+
+            R.id.show_today_asteroid -> {
+
+                Timber.i("jjj  show_today_asteroid selected" )
+                asteroidViewModel.onApplyFilter(AsteroidMainViewModel.FilterType.TODAY)
+                binding.asteroidRecycler.scrollToPosition(0)
+                return true}
+            R.id.show_next_week_asteroid -> {
+                Timber.i("jjj  show_next_week_asteroid selected" )
+
+                asteroidViewModel.onApplyFilter(AsteroidMainViewModel.FilterType.WEEK)
+                binding.asteroidRecycler.scrollToPosition(0)
+                return true}
+            R.id.show_saved_asteroid -> {
+                Timber.i("jjj  show_saved_asteroid selected" )
+
+
+                asteroidViewModel.onApplyFilter(AsteroidMainViewModel.FilterType.SAVE)
+                binding.asteroidRecycler.scrollToPosition(0)
+                return true}
+
+            else ->  super.onOptionsItemSelected(item)
+        }*/
     }
 }

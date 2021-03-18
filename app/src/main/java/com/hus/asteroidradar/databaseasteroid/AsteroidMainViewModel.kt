@@ -1,6 +1,5 @@
 package com.hus.asteroidradar.databaseasteroid
 
-import android.app.Application
 import android.content.Context
 import android.util.Log
 import androidx.lifecycle.*
@@ -12,8 +11,11 @@ import com.hus.asteroidradar.asteroidrepository.AsteroidRepository
 import com.hus.asteroidradar.asteroidrepository.ResourcesData
 import com.hus.asteroidradar.databasepictureday.PictureOfDay
 import com.hus.asteroidradar.databasepictureday.PictureOfDayDataBase
+import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
+import timber.log.Timber
+
 
 /*
 class AsteroidMainViewModel (
@@ -30,7 +32,8 @@ class AsteroidMainViewModel (
 }*/
 
 class AsteroidMainViewModel(applicationContext: Context) : ViewModel() {
-
+    private val networkUtils: NetworkUtils = NetworkUtils()
+    private val database = AsteroidDatabase.getInstanceOfAsteroidDatabase(applicationContext)
     private val repository: AsteroidRepository =
             AsteroidRepository(
                     AsteroidDatabase.getInstanceOfAsteroidDatabase(applicationContext)
@@ -74,4 +77,50 @@ class AsteroidMainViewModel(applicationContext: Context) : ViewModel() {
             }
         }
     }
+/*
+    private val typeOfFilter = MutableLiveData(FilterType.TODAY)
+    enum class FilterType(val type: String) {WEEK("Week"), TODAY("Today"), SAVE("Saved")}
+    fun applyFilter(filterType: FilterType){
+
+        Timber.i("mmmm  applyFilter selected:  " + filterType )
+        typeOfFilter.value = filterType
+    }
+    fun onApplyFilter(filter : FilterType){
+
+        Timber.i("mmmm  onApplyFilter selected:  " + filter )
+        applyFilter(filter)
+    }
+    private var _asteroids = MutableLiveData<List<Asteroid>>()
+
+    val asteroidsData: LiveData<List<Asteroid>>
+        get() = _asteroids
+*/
+
+
+    fun menuWeekClicked() {
+        Timber.i("mmmm  menuWeekClicked :  " )
+        viewModelScope.launch {
+            database.asteroidsDao()
+                .getAsteroidsByDate(networkUtils.getTodaysData(), networkUtils.getWeekData())
+
+        }
+    }
+
+
+    fun menuTodayClicked() {
+        Timber.i("mmmm  menuTodayClicked :  " )
+        viewModelScope.launch {
+            database.asteroidsDao()
+                .getAsteroidsByDate(networkUtils.getTodaysData(), networkUtils.getTodaysData())
+
+        }
+    }
+
+    fun menuSavedClicked() {
+        Timber.i("mmmm  menuSavedClicked :  " )
+        viewModelScope.launch {
+            database.asteroidsDao().getAllData()
+            }
+        }
 }
+

@@ -112,6 +112,7 @@ class AsteroidRepository(
                             "Error: No Network"))
         }
     }
+
 }
 
 class Failed(val code: Int, val message: String) : ResponsesFromWeb<Nothing>()
