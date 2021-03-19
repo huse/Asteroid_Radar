@@ -28,4 +28,6 @@ abstract class AsteroidDatabase : RoomDatabase(){
     }
 
     abstract fun asteroidsDao(): AsteroidsDao
+
+     fun gettinAllAstroidList() = asteroidsDao().getAllData()
 }

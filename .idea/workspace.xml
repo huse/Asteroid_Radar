@@ -6,6 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="hhhh" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
@@ -29,13 +30,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07168ae8-0f0c-42cb-9039-72cd57d08460" name="Default Changelist" comment="trying to implement Option menu for filtering astroid for weeks saved and today">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_room_room_ktx_2_2_6_aar.xml" afterDir="false" />
+    <list default="true" id="07168ae8-0f0c-42cb-9039-72cd57d08460" name="Default Changelist" comment="Fixed issue with kotlin room">
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/Asteroid_Radar.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/Asteroid_Radar.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/api/NetworkUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/api/NetworkUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/asteroidrepository/AsteroidRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/asteroidrepository/AsteroidRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/databaseasteroid/AsteroidDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/databaseasteroid/AsteroidDatabase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/databaseasteroid/AsteroidMainViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/databaseasteroid/AsteroidMainViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/databaseasteroid/AsteroidsDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hus/asteroidradar/databaseasteroid/AsteroidsDao.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -312,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616093153487</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Fixed issue with kotlin room">
+      <created>1616097206074</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1616097206074</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -352,7 +361,8 @@
     <MESSAGE value="fix message issue.&#10;Add worker" />
     <MESSAGE value="fixed icon issue." />
     <MESSAGE value="trying to implement Option menu for filtering astroid for weeks saved and today" />
-    <option name="LAST_COMMIT_MESSAGE" value="trying to implement Option menu for filtering astroid for weeks saved and today" />
+    <MESSAGE value="Fixed issue with kotlin room" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed issue with kotlin room" />
   </component>
   <component name="WindowStateProjectService">
     <state x="357" y="-768" key="#PSD" timestamp="1616095219219">
@@ -363,10 +373,10 @@
       <screen x="-128" y="-1057" width="1920" height="1057" />
     </state>
     <state x="572" y="-735" key="#com.intellij.fileTypes.FileTypeChooser/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@-128.-1057.1920.1057" timestamp="1615852993345" />
-    <state x="611" y="-806" key="#com.intellij.ide.util.MemberChooser" timestamp="1615786394268">
+    <state x="611" y="-806" key="#com.intellij.ide.util.MemberChooser" timestamp="1616102436797">
       <screen x="-128" y="-1057" width="1920" height="1057" />
     </state>
-    <state x="611" y="-806" key="#com.intellij.ide.util.MemberChooser/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@-128.-1057.1920.1057" timestamp="1615761857727" />
+    <state x="611" y="-806" key="#com.intellij.ide.util.MemberChooser/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@-128.-1057.1920.1057" timestamp="1616102436797" />
     <state x="611" y="-806" key="#com.intellij.ide.util.MemberChooser/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1097@-128.-1057.1920.1057" timestamp="1615786394268" />
     <state x="611" y="-806" key="#com.intellij.ide.util.MemberChooser/1792.-1057.1920.977/-128.-1057.1920.1057/0.23.1792.1097@-128.-1057.1920.1057" timestamp="1615602761204" />
     <state x="848" y="-1057" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1615822108498">
@@ -397,40 +407,40 @@
       <screen x="1792" y="-1057" width="1920" height="1057" />
     </state>
     <state x="2408" y="-815" key="Github.UntrackedFilesDialog/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@1792.-1057.1920.1057" timestamp="1615583796707" />
-    <state width="1876" height="372" key="GridCell.Tab.0.bottom" timestamp="1616096402402">
+    <state width="1876" height="415" key="GridCell.Tab.0.bottom" timestamp="1616126092620">
       <screen x="-128" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1876" height="372" key="GridCell.Tab.0.bottom/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@-128.-1057.1920.1057" timestamp="1616096402402" />
+    <state width="1876" height="415" key="GridCell.Tab.0.bottom/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@-128.-1057.1920.1057" timestamp="1616126092620" />
     <state width="1748" height="379" key="GridCell.Tab.0.bottom/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@0.23.1792.1017" timestamp="1615998982259" />
     <state width="1748" height="262" key="GridCell.Tab.0.bottom/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@1792.-1057.1920.1057" timestamp="1615918076881" />
     <state width="1876" height="415" key="GridCell.Tab.0.bottom/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1097@-128.-1057.1920.1057" timestamp="1616095689536" />
     <state width="1748" height="267" key="GridCell.Tab.0.bottom/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1615947241052" />
     <state width="1876" height="290" key="GridCell.Tab.0.bottom/1792.-1057.1920.977/-128.-1057.1920.1057/0.23.1792.1097@-128.-1057.1920.1057" timestamp="1615597146190" />
     <state width="1748" height="267" key="GridCell.Tab.0.bottom/1792.-1057.1920.977/-128.-1057.1920.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1615928602001" />
-    <state width="1876" height="372" key="GridCell.Tab.0.center" timestamp="1616096402401">
+    <state width="1876" height="415" key="GridCell.Tab.0.center" timestamp="1616126092620">
       <screen x="-128" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1876" height="372" key="GridCell.Tab.0.center/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@-128.-1057.1920.1057" timestamp="1616096402401" />
+    <state width="1876" height="415" key="GridCell.Tab.0.center/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@-128.-1057.1920.1057" timestamp="1616126092620" />
     <state width="1748" height="379" key="GridCell.Tab.0.center/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@0.23.1792.1017" timestamp="1615998982258" />
     <state width="1748" height="262" key="GridCell.Tab.0.center/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@1792.-1057.1920.1057" timestamp="1615918076881" />
     <state width="1876" height="415" key="GridCell.Tab.0.center/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1097@-128.-1057.1920.1057" timestamp="1616095689535" />
     <state width="1748" height="267" key="GridCell.Tab.0.center/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1615947241051" />
     <state width="1876" height="290" key="GridCell.Tab.0.center/1792.-1057.1920.977/-128.-1057.1920.1057/0.23.1792.1097@-128.-1057.1920.1057" timestamp="1615597146189" />
     <state width="1748" height="267" key="GridCell.Tab.0.center/1792.-1057.1920.977/-128.-1057.1920.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1615928602000" />
-    <state width="1876" height="372" key="GridCell.Tab.0.left" timestamp="1616096402400">
+    <state width="1876" height="415" key="GridCell.Tab.0.left" timestamp="1616126092619">
       <screen x="-128" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1876" height="372" key="GridCell.Tab.0.left/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@-128.-1057.1920.1057" timestamp="1616096402400" />
+    <state width="1876" height="415" key="GridCell.Tab.0.left/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@-128.-1057.1920.1057" timestamp="1616126092619" />
     <state width="1748" height="379" key="GridCell.Tab.0.left/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@0.23.1792.1017" timestamp="1615998982258" />
     <state width="1748" height="262" key="GridCell.Tab.0.left/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@1792.-1057.1920.1057" timestamp="1615918076880" />
     <state width="1876" height="415" key="GridCell.Tab.0.left/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1097@-128.-1057.1920.1057" timestamp="1616095689535" />
     <state width="1748" height="267" key="GridCell.Tab.0.left/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1615947241051" />
     <state width="1876" height="290" key="GridCell.Tab.0.left/1792.-1057.1920.977/-128.-1057.1920.1057/0.23.1792.1097@-128.-1057.1920.1057" timestamp="1615597146188" />
     <state width="1748" height="267" key="GridCell.Tab.0.left/1792.-1057.1920.977/-128.-1057.1920.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1615928601999" />
-    <state width="1876" height="372" key="GridCell.Tab.0.right" timestamp="1616096402401">
+    <state width="1876" height="415" key="GridCell.Tab.0.right" timestamp="1616126092620">
       <screen x="-128" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1876" height="372" key="GridCell.Tab.0.right/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@-128.-1057.1920.1057" timestamp="1616096402401" />
+    <state width="1876" height="415" key="GridCell.Tab.0.right/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@-128.-1057.1920.1057" timestamp="1616126092620" />
     <state width="1748" height="379" key="GridCell.Tab.0.right/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@0.23.1792.1017" timestamp="1615998982259" />
     <state width="1748" height="262" key="GridCell.Tab.0.right/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@1792.-1057.1920.1057" timestamp="1615918076881" />
     <state width="1876" height="415" key="GridCell.Tab.0.right/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1097@-128.-1057.1920.1057" timestamp="1616095689536" />
@@ -441,10 +451,10 @@
       <screen x="1792" y="-1057" width="1920" height="1057" />
     </state>
     <state x="2253" y="-890" key="SettingsEditor/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@1792.-1057.1920.1057" timestamp="1615583826934" />
-    <state x="756" y="-787" key="Vcs.Push.Dialog.v2" timestamp="1616093155398">
+    <state x="756" y="-787" key="Vcs.Push.Dialog.v2" timestamp="1616097208286">
       <screen x="-128" y="-1057" width="1920" height="1057" />
     </state>
-    <state x="756" y="-787" key="Vcs.Push.Dialog.v2/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@-128.-1057.1920.1057" timestamp="1615956679336" />
+    <state x="756" y="-787" key="Vcs.Push.Dialog.v2/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@-128.-1057.1920.1057" timestamp="1616097208285" />
     <state x="825" y="283" key="Vcs.Push.Dialog.v2/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@0.23.1792.1017" timestamp="1615999137659" />
     <state x="2676" y="-787" key="Vcs.Push.Dialog.v2/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@1792.-1057.1920.1057" timestamp="1615919063065" />
     <state x="756" y="-787" key="Vcs.Push.Dialog.v2/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1097@-128.-1057.1920.1057" timestamp="1616093155398" />
@@ -459,11 +469,11 @@
       <screen x="-128" y="-1057" width="1920" height="1057" />
     </state>
     <state x="614" y="-648" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@-128.-1057.1920.1057" timestamp="1615993987056" />
-    <state x="356" y="-855" width="1015" height="548" key="find.popup" timestamp="1616095235082">
+    <state x="502" y="-784" width="1015" height="548" key="find.popup" timestamp="1616116989526">
       <screen x="-128" y="-1057" width="1920" height="1057" />
     </state>
     <state x="588" y="286" width="615" height="490" key="find.popup/0.23.1792.1017@0.23.1792.1017" timestamp="1615563997630" />
-    <state x="502" y="-784" width="1015" height="548" key="find.popup/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@-128.-1057.1920.1057" timestamp="1615992982147" />
+    <state x="502" y="-784" width="1015" height="548" key="find.popup/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@-128.-1057.1920.1057" timestamp="1616116989526" />
     <state x="452" y="217" width="948" height="528" key="find.popup/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@0.23.1792.1017" timestamp="1615923120401" />
     <state x="2422" y="-784" width="1015" height="548" key="find.popup/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1017@1792.-1057.1920.1057" timestamp="1615576065769" />
     <state x="356" y="-855" width="1015" height="548" key="find.popup/1792.-1057.1920.1057/-128.-1057.1920.1057/0.23.1792.1097@-128.-1057.1920.1057" timestamp="1616095235082" />

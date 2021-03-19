@@ -60,6 +60,40 @@ class AsteroidRepository(
         }.dataLive()
     }
 
+    fun gettingAsteroidDataWeb2(s1:String, s2: String): LiveData<ResourcesData<List<Asteroid>>> {
+        return object : ResourcesNetwork<List<Asteroid>, String>(viewModelScope) {
+            override suspend fun loadingFromDisks(): LiveData<List<Asteroid>> {
+                return MutableLiveData(asteroidsDao.getAsteroidsByDate2(s2 , s1))
+            }
+
+            override fun shouldFetching(diskResponse: List<Asteroid>?): Boolean {
+                return diskResponse.isNullOrEmpty()
+            }
+
+            override suspend fun fetchingData(): ResponsesFromWeb<String> {
+                val call = asterServicesWeb.getNEOFeed(apiKey = BuildConfig.NASA_ASTEROID_API_KEY)
+                val response = call.safeExecute()
+
+                if (!response.isSuccessful || response.body().isNullOrEmpty()) {
+                    return Failed(400, "Invalid Response")
+                }
+
+                return Successful(response.body() as String)
+            }
+
+            override fun processingResponse(response: String): List<Asteroid> {
+                val json = JSONObject(response)
+
+                return networkUtils.parseAsteroidsJsonResult(json)
+            }
+
+            override suspend fun savingToDisks(data: List<Asteroid>): Boolean {
+                val ids = asteroidsDao.updateData(data)
+                return ids.isNotEmpty()
+            }
+        }.dataLive()
+    }
+
    fun gettingPictureOfTheDay(): LiveData<ResourcesData<PictureOfDay>> {
         return object : ResourcesNetwork<PictureOfDay, String>(viewModelScope) {
             override suspend fun loadingFromDisks(): LiveData<PictureOfDay> {

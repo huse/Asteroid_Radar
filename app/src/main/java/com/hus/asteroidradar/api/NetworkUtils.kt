@@ -18,7 +18,7 @@ class NetworkUtils {
         val asteroidList = ArrayList<Asteroid>()
 
         val nextSevenDaysFormattedDates = getNextSevenDaysFormattedDates()
-        Timber.i("hhhh" + nextSevenDaysFormattedDates.toString())
+        Timber.i("hhhh     nextSevenDaysFormattedDates" + nextSevenDaysFormattedDates.toString())
         for (formattedDate in nextSevenDaysFormattedDates) {
             //val dateAsteroidJsonArray = nearEarthObjectsJson.getJSONArray(formattedDate)
             val dateAsteroidJsonArray = nearEarthObjectsJson.getJSONArray(formattedDate)

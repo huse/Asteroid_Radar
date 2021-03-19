@@ -34,23 +34,24 @@ class AsteroidMainViewModel (
 class AsteroidMainViewModel(applicationContext: Context) : ViewModel() {
     private val networkUtils: NetworkUtils = NetworkUtils()
     private val database = AsteroidDatabase.getInstanceOfAsteroidDatabase(applicationContext)
+
     private val repository: AsteroidRepository =
             AsteroidRepository(
-                    AsteroidDatabase.getInstanceOfAsteroidDatabase(applicationContext)
-                            .asteroidsDao(),
-                    Room.databaseBuilder(
-                            applicationContext,
-                            PictureOfDayDataBase::class.java,
-                            "pic-day-db"
-                    )
-                            .fallbackToDestructiveMigration()
-                            .build()
-                            .pictureDayDatabase(),
-                    Retrofit.Builder().baseUrl(Constants.BASE_URL)
-                            .addConverterFactory(ScalarsConverterFactory.create())
-                            .build()
-                            .create(AsterServicesWeb::class.java),
-                    viewModelScope, networkUtils = NetworkUtils()
+                AsteroidDatabase.getInstanceOfAsteroidDatabase(applicationContext)
+                    .asteroidsDao(),
+                Room.databaseBuilder(
+                    applicationContext,
+                    PictureOfDayDataBase::class.java,
+                    "pic-day-db"
+                )
+                    .fallbackToDestructiveMigration()
+                    .build()
+                    .pictureDayDatabase(),
+                Retrofit.Builder().baseUrl(Constants.BASE_URL)
+                    .addConverterFactory(ScalarsConverterFactory.create())
+                    .build()
+                    .create(AsterServicesWeb::class.java),
+                viewModelScope, networkUtils = NetworkUtils()
             )
 
     val asteroidFeed: MediatorLiveData<ResourcesData<List<Asteroid>>> = MediatorLiveData()
@@ -77,50 +78,68 @@ class AsteroidMainViewModel(applicationContext: Context) : ViewModel() {
             }
         }
     }
-/*
     private val typeOfFilter = MutableLiveData(FilterType.TODAY)
     enum class FilterType(val type: String) {WEEK("Week"), TODAY("Today"), SAVE("Saved")}
     fun applyFilter(filterType: FilterType){
 
-        Timber.i("mmmm  applyFilter selected:  " + filterType )
+        Timber.i("mmmm  applyFilter selected:  " + filterType)
         typeOfFilter.value = filterType
     }
-    fun onApplyFilter(filter : FilterType){
+    fun onApplyFilter(filter: FilterType){
 
-        Timber.i("mmmm  onApplyFilter selected:  " + filter )
+        Timber.i("mmmm  onApplyFilter selected:  " + filter)
         applyFilter(filter)
     }
     private var _asteroids = MutableLiveData<List<Asteroid>>()
 
     val asteroidsData: LiveData<List<Asteroid>>
         get() = _asteroids
-*/
 
 
     fun menuWeekClicked() {
-        Timber.i("mmmm  menuWeekClicked :  " )
+        Timber.i("mmmm  menuWeekClicked :  ")
         viewModelScope.launch {
             database.asteroidsDao()
-                .getAsteroidsByDate(networkUtils.getTodaysData(), networkUtils.getWeekData())
-
+                .getAsteroidsByDate4(networkUtils.getTodaysData(), networkUtils.getWeekData())
         }
+
+/*        val response = repository.gettingAsteroidDataWeb2(FilterType.TODAY.toString(), FilterType.WEEK.toString() )
+        asteroidFeed.addSource(response) { newData ->
+            if (asteroidFeed.value != newData) {
+                asteroidFeed.value = newData
+            }
+        }*/
     }
 
 
     fun menuTodayClicked() {
-        Timber.i("mmmm  menuTodayClicked :  " )
+        Timber.i("mmmm  menuTodayClicked :  ")
         viewModelScope.launch {
             database.asteroidsDao()
-                .getAsteroidsByDate(networkUtils.getTodaysData(), networkUtils.getTodaysData())
+                .getAsteroidsByDate4(networkUtils.getTodaysData(), networkUtils.getTodaysData())
 
         }
     }
 
     fun menuSavedClicked() {
-        Timber.i("mmmm  menuSavedClicked :  " )
-        viewModelScope.launch {
-            database.asteroidsDao().getAllData()
+        Timber.i("mmmm  menuSavedClicked :  ")
+        val response = repository.gettingAsteroidDataWeb()
+        asteroidFeed.addSource(response) { newData ->
+            if (asteroidFeed.value != newData) {
+                asteroidFeed.value = newData
             }
         }
+    }
+    private fun gettinAllAstroidList() = database.gettinAllAstroidList()
+
+/*    val asteroidsList =
+        Transformations.map(typeOfFilter) { period ->
+            period?.let {
+                when (period) {
+                    FilterType.TODAY   -> repository.today
+                    FilterType.WEEK -> repository.week
+                }
+            }
+        }*/
 }
 
